@@ -2,6 +2,13 @@
 
 // Functions in JavaScript are reusable blocks of code that perform a specific task. They allow you to encapsulate logic, making your code more organized, modular, and easier to maintain. Functions can take inputs (parameters), perform operations, and return outputs (return values).
 
+function greet(name) {   // parameter
+  console.log(name);
+}
+
+greet("Yogesh");         // argument
+
+
 // There are several ways to define functions in JavaScript:    
 // 1. Function Declaration:
 function greet(name) {
@@ -111,6 +118,7 @@ const person = {
 };
 const greetFunction = person.greet;
 greetFunction(); // Output: Hello, my name is undefined
+person.greet(); // Output: Hello, my name is Charlie
 const boundGreet = greetFunction.bind(person);
 boundGreet(); // Output: Hello, my name is Charlie
 // In this example, the `bind` method is used to create a new function with `this` bound to the `person` object.
@@ -124,7 +132,7 @@ async function fetchData(url) {
         console.error('Error fetching data:', error);
     }
 }
-fetchData('https://api.example.com/data')
+fetchData('https://jsonplaceholder.typicode.com/todos')
     .then(data => console.log(data));
 // In this example, the `fetchData` function is an asynchronous function that fetches data from a given URL and returns the parsed JSON data.
   
