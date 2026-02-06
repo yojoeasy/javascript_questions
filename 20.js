@@ -245,6 +245,47 @@ fn9("Delhi");
 
 
 
+// START
+//   |
+//   |-- Is the function an ARROW function?
+//   |       |
+//   |       |-- YES → `this` = lexical (from parent scope)
+//   |       |
+//   |       |-- NO
+//   |
+//   |-- Is the function called with `new`?
+//   |       |
+//   |       |-- YES → `this` = newly created object
+//   |       |
+//   |       |-- NO
+//   |
+//   |-- Is the function called with `call`, `apply`, or `bind`?
+//   |       |
+//   |       |-- YES → `this` = explicitly provided object
+//   |       |
+//   |       |-- NO
+//   |
+//   |-- Is the function called as an object method?
+//   |       |   (object.method())
+//   |       |
+//   |       |-- YES → `this` = object before the dot
+//   |       |
+//   |       |-- NO
+//   |
+//   |-- Is it a DOM event handler (normal function)?
+//   |       |
+//   |       |-- YES → `this` = element that triggered the event
+//   |       |
+//   |       |-- NO
+//   |
+//   |-- DEFAULT
+//           |
+//           |-- Strict mode → `this` = undefined
+//           |
+//           |-- Non-strict → `this` = window
+
+
+
 
 
 
